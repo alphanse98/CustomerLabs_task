@@ -98,7 +98,7 @@ const Dropdowns = ({ newSchemas, setNewSchemas }) => {
         </select>
       </div>
       <p className="addNewSchema cursor" onClick={() => addSchema()}>
-        + Add new schema
+      <u> + Add new schema </u>
       </p>
     </div>
   );
