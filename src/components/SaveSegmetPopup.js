@@ -35,7 +35,6 @@ const SaveSegmetPopup = ({ setPopup }) => {
         alert("successfully submitted ");
       } catch (error) {
         alert(" Error");
-        setPopup(false);
         setIsLoadin(false);
       }
     } else {
