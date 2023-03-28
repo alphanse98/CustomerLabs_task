@@ -4,7 +4,7 @@
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
 }
-
+/* ==================== Reusable css ============================== */
 .flex {
   display: flex;
 }
@@ -17,14 +17,12 @@
 .align-center {
   align-items: center;
 }
-
 .ml-2 {
   margin-left: 1.5rem;
 }
 .ml-1 {
   margin-left: 1rem;
 }
-
 .font-12 {
   font-size: 1.1rem;
 }
@@ -37,7 +35,6 @@
 .cursor {
   cursor: pointer;
 }
-
 .with-100 {
   width: 90%;
 }
@@ -86,18 +83,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-@media(max-width:650px){
-  .SaveSegmetPopup {
-    width: 70%;
 
-  }
-}
-@media(max-width:400px){
-  .SaveSegmetPopup {
-    width: 100%;
-
-  }
-}
 .leftBox {
   padding: 1.5rem;
 }
@@ -149,3 +135,16 @@
     overflow-y: scroll;
     height: 50vh;
   }
+  /* ================================= responsive ================== */
+@media(max-width:650px){
+  .SaveSegmetPopup {
+    width: 70%;
+
+  }
+}
+@media(max-width:400px){
+  .SaveSegmetPopup {
+    width: 100%;
+
+  }
+}

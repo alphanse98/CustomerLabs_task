@@ -22,7 +22,7 @@ const Dropdowns = ({ newSchemas, setNewSchemas }) => {
     setReset(selectedData.value);
   };
 
-  // option move Schemas to newSchemas
+  // user selected option move Schemas to newSchemas
   const addSchema = () => {
     if (selectedOption !== undefined && selectedOption !== "") {
       // pudh data
@@ -39,7 +39,7 @@ const Dropdowns = ({ newSchemas, setNewSchemas }) => {
   }
 
   
-  // option move newSchemas to Schemas and remove the option in existing dropdown
+  // user selected option move newSchemas to Schemas and remove  in existing dropdown
   const edit = (e, i) => {
     //push back to dropedown
     setSchemasOption((prevSchemas) => [...prevSchemas, newSchemas[i]]);
@@ -71,7 +71,7 @@ const Dropdowns = ({ newSchemas, setNewSchemas }) => {
             <select
               key={i}
               value={e.Label} 
-              className="dropdown fontNormal"
+              className="dropdown fontNormal cursor"
               onChange={(e) => edit(e, i)}
             >
               <option key={i}>{e.Label}</option>
@@ -85,7 +85,7 @@ const Dropdowns = ({ newSchemas, setNewSchemas }) => {
       {/* Add schema to segment dropdown */}
       <div>
         <select
-          className="dropdown fontNormal"
+          className="dropdown fontNormal cursor"
           onChange={handleSelectChange}
           value={reset}
         >

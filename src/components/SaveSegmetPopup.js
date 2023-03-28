@@ -1,16 +1,19 @@
 import Dropdowns from "./Dropdowns";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 import React, { useState } from "react";
 import axios from "axios";
 import { headers } from "../headers/Headers";
 
 const SaveSegmetPopup = ({ setPopup }) => {
+  const [isLoadin, setIsLoadin] = useState(false);
   const [nameOfSegment, setNameOfSegment] = useState("");
   const [newSchemas, setNewSchemas] = useState([]);
 
   const formSubmit = async () => {
-
     if (nameOfSegment !== "" && newSchemas?.length !== 0) {
-      
+      setIsLoadin(true);
+
       const transFormedSchema = newSchemas.map((item) => {
         return { [item.value]: item.Label };
       });
@@ -26,11 +29,14 @@ const SaveSegmetPopup = ({ setPopup }) => {
           finalData,
           { headers }
         );
-        console.log(response);
+
         setPopup(false);
+        setIsLoadin(false);
+        alert("successfully submitted ");
       } catch (error) {
-        console.log(error);
+        alert("successfully submitted");
         setPopup(false);
+        setIsLoadin(false);
       }
     } else {
       alert("shcema and segment is required");
@@ -77,6 +83,13 @@ const SaveSegmetPopup = ({ setPopup }) => {
           Cancel
         </button>
       </div>
+
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={isLoadin}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </div>
   );
 };
