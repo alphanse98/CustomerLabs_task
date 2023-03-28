@@ -34,7 +34,7 @@ const SaveSegmetPopup = ({ setPopup }) => {
         setIsLoadin(false);
         alert("successfully submitted ");
       } catch (error) {
-        alert("successfully submitted");
+        alert(" Error");
         setPopup(false);
         setIsLoadin(false);
       }
@@ -83,7 +83,7 @@ const SaveSegmetPopup = ({ setPopup }) => {
           Cancel
         </button>
       </div>
-
+      {/* loader */}
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={isLoadin}
